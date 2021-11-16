@@ -7,9 +7,9 @@ if ((!$_GET['id'])) {
     echo "<script>alert('You are Not Suppose to come Here Directly');window.location.href='index.php';</script>";
 }
 include "connection.php";
-$movieQuery = "SELECT * FROM movieTable WHERE movieID = $id";
-$movieImageById = mysqli_query($con, $movieQuery);
-$row = mysqli_fetch_array($movieImageById);
+$movieQuery = "SELECT * FROM movieTable WHERE eventID = $id";
+$eventImg = mysqli_query($con, $movieQuery);
+$row = mysqli_fetch_array($eventImg);
 ?>
 
 <head>
@@ -34,62 +34,32 @@ $row = mysqli_fetch_array($movieImageById);
         <div class="booking-panel-section booking-panel-section3">
             <div class="movie-box">
                 <?php
-                echo '<img src="' . $row['movieImg'] . '" alt="">';
+                echo '<img src="' . $row['eventImg'] . '" alt="">';
                 ?>
             </div>
         </div>
         <div class="booking-panel-section booking-panel-section4">
-            <div class="title"><?php echo $row['movieTitle']; ?></div>
-            <div class="movie-information">
-                <table>
-                    <tr>
-                        <td>GENGRE</td>
-                        <td><?php echo $row['movieGenre']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>DURATION</td>
-                        <td><?php echo $row['movieDuration']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>RELEASE DATE</td>
-                        <td><?php echo $row['movieRelDate']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>DIRECTOR</td>
-                        <td><?php echo $row['movieDirector']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>ACTORS</td>
-                        <td><?php echo $row['movieActors']; ?></td>
-                    </tr>
-                </table>
+            <div class="title"><?php echo $row['eventTitle']; ?></div>
+            <div class="event-information">
+
             </div>
             <div class="booking-form-container">
                 <form action="verify.php" method="POST">
 
 
                     <select name="theatre" required>
-                        <option value="" disabled selected>THEATRE</option>
-                        <option value="main-hall">Main Hall</option>
-                        <option value="vip-hall">VIP Hall</option>
-                        <option value="private-hall">Private Hall</option>
-                    </select>
-
-                    <select name="type" required>
-                        <option value="" disabled selected>TYPE</option>
-                        <option value="3d">3D</option>
-                        <option value="2d">2D</option>
-                        <option value="imax">IMAX</option>
-                        <option value="7d">7D</option>
+                        <option value="" disabled selected>SITTING SLOT</option>
+                        <option value="vip-hall">VIP</option>
+                        <option value="private-hall">REGULAR</option>
                     </select>
 
                     <select name="date" required>
                         <option value="" disabled selected>DATE</option>
-                        <option value="12-3">March 12,2019</option>
-                        <option value="13-3">March 13,2019</option>
-                        <option value="14-3">March 14,2019</option>
-                        <option value="15-3">March 15,2019</option>
-                        <option value="16-3">March 16,2019</option>
+                        <option value="12-3">NOVEMBER 16,2021</option>
+                        <option value="13-3">NOVEMBER 23,2021</option>
+                        <option value="14-3">DECEMBER 5,2021</option>
+                        <option value="15-3">DECEMBER 12,2021</option>
+                        <option value="16-3">DECEMBER 19,2021</option>
                     </select>
 
                     <select name="hour" required>

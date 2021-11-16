@@ -8,7 +8,7 @@ $lname = $_POST['lName'];
 $email = $_POST['email'];
 $mobile = $_POST['pNumber'];
 $theatre = $_POST['theatre'];
-$type = $_POST['type'];
+
 $date = $_POST['date'];
 $time = $_POST['hour'];
 $movieid = $_POST['movie_id'];
@@ -26,7 +26,7 @@ if ((!$_POST['submit'])) {
 
 if (isset($_POST['submit'])) {
 
-    $qry = "INSERT INTO bookingtable(`movieID`, `bookingTheatre`, `bookingType`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`, `bookingEmail`,`amount`, `ORDERID`)VALUES ('$movieid','$theatre','$type','$date','$time','$fname','$lname','$mobile','$email','Not Paid','$order')";
+    $qry = "INSERT INTO bookingtable(`movieID`, `bookingTheatre`, `bookingType`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`, `bookingEmail`,`amount`, `ORDERID`)VALUES ('$movieid','$theatre','$date','$time','$fname','$lname','$mobile','$email','Not Paid','$order')";
 
     $result = mysqli_query($con, $qry);
 }
@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Aman_Sharma</title>
+    <title>CHURCHILL SHOW.</title>
     <script src="_.js "></script>
 </head>
 
@@ -78,38 +78,29 @@ if (isset($_POST['submit'])) {
                         <td>3</td>
                         <td><label>Website ::*</label></td>
                         <td>
-                            <?php echo "ARVRcinemas"; ?>
+                            <?php echo "Churchill.co.ke"; ?>
                         </td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td><label>THEATRE ::*</label></td>
+                        <td><label>SITTING SLOT ::*</label></td>
                         <td>
                             <?php echo $_POST['theatre']; ?>
                         </td>
                     </tr>
+                   
                     <tr>
                         <td>5</td>
-                        <td><label>TYPE ::*</label></td>
-                        <td>
-                            <?php echo $_POST['type']; ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td><label>txnAmount*</label></td>
+                        <td><label>TXN_AMOUNT*</label></td>
                         <td>
                             <?php
-                            if ($theatre == "main-hall") {
-                                $ta = 200;
-                            }
-                            if ($theatre == "vip-hall") {
+                            if ($theatre == "REGULAR") {
                                 $ta = 500;
                             }
-                            if ($theatre == "private-hall") {
-                                $ta = 900;
+                            if ($theatre == "VIP") {
+                                $ta = 1000;
                             }
-
+                        
                             ?>
 
                             <input type="text" name="TXN_AMOUNT" value="<?php echo $ta; ?>" readonly>

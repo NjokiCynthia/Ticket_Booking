@@ -48,7 +48,7 @@ if (!isset($_SESSION['uname'])) {
                     <div class="admin-section-stats-panel">
                         <i class="fas fa-film" style="background-color: #4547cf"></i>
                         <h2 style="color: #4547cf"><?php echo $moviesNo ?></h2>
-                        <h3>Movies</h3>
+                        <h3>Churchill Shows</h3>
                     </div>
                     <div class="admin-section-stats-panel">
                         <i class="fas fa-users" style="background-color: #000000"></i>

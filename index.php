@@ -18,22 +18,22 @@
     $sql = "SELECT * FROM movieTable";
     ?>
     <header></header>
-    <div id="home-section-1" class="movie-show-container">
-        <h1>Currently Showing</h1>
-        <h3>Book a movie now</h3>
+    <div id="home-section-1" class="churchill-show-container">
+        <h1> Upcoming events</h1>
+        <h3>BOOK AN UPCOMING EVENT NOW.</h3>
 
         <div class="movies-container">
 
             <?php
             if ($result = mysqli_query($con, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
-                    for ($i = 0; $i <= 5; $i++) {
+                    for ($i = 0; $i <= 3; $i++) {
                         $row = mysqli_fetch_array($result);
                         echo '<div class="movie-box">';
-                        echo '<img src="' . $row['movieImg'] . '" alt=" ">';
-                        echo '<div class="movie-info ">';
-                        echo '<h3>' . $row['movieTitle'] . '</h3>';
-                        echo '<a href="booking.php?id=' . $row['movieID'] . '"><i class="fas fa-ticket-alt"></i> Book a seat</a>';
+                        echo '<img src="' . $row['eventImg'] . '" alt=" ">';
+                        echo '<div class="eventinfo ">';
+                        echo '<h3>' . $row['eventTitle'] . '</h3>';
+                        echo '<a href="booking.php?id=' . $row['eventID'] . '"><i class="fas fa-ticket-alt"></i> Book a seat</a>';
                         echo '</div>';
                         echo '</div>';
                     }
@@ -60,7 +60,7 @@
                 <div class="service-item-icon">
                     <i class="fas fa-4x fa-video"></i>
                 </div>
-                <h2>1. Choose your prefferred sitting area</h2>
+                <h2>1. Choose the prefferred upcoming event you would wish to attend.</h2>
             </div>
             <div class="service-item">
                 <div class="service-item-icon">
