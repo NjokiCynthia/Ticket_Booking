@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <title>ARVR Cinema</title>
-    <link rel="icon" type="image/png" href="img/logo.png">
+    <title>CHURCHILL SHOW.</title>
+    <link rel="icon" type="image/jpeg" href="Churchill_Show_logo.jpeg">
     <script src="_.js "></script>
 </head>
 
@@ -39,7 +39,7 @@
                     }
                     mysqli_free_result($result);
                 } else {
-                    echo '<h4 class="no-annot">No Booking to our movies right now</h4>';
+                    echo '<h4 class="no-annot">No Booking to attend churchill show right now</h4>';
                 }
             } else {
                 echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
@@ -53,14 +53,14 @@
 
     <div id="home-section-2" class="services-section">
         <h1>How it works</h1>
-        <h3>3 Simple steps to book your favourit movie!</h3>
+        <h3>3 Simple steps to book your favourite Churchill show slot.</h3>
 
         <div class="services-container">
             <div class="service-item">
                 <div class="service-item-icon">
                     <i class="fas fa-4x fa-video"></i>
                 </div>
-                <h2>1. Choose your favourite movie</h2>
+                <h2>1. Choose your prefferred sitting area</h2>
             </div>
             <div class="service-item">
                 <div class="service-item-icon">
@@ -76,54 +76,6 @@
             </div>
             <div class="service-item"></div>
             <div class="service-item"></div>
-        </div>
-    </div>
-    <div id="home-section-3" class="trailers-section">
-        <h1 class="section-title">Explore new movies</h1>
-        <h3>Now showing</h3>
-        <div class="trailers-grid">
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-1.jpg" alt="">
-                <div class="trailer-item-info" data-video="Z1BCujX3pw8">
-                    <h3>Captain Marvel</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
-                </div>
-            </div>
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-2.jpg" alt="">
-                <div class="trailer-item-info" data-video="OPEfsEaFv_c">
-                    <h3>Karmat Bytmrmt</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
-                </div>
-            </div>
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-3.jpg" alt="">
-                <div class="trailer-item-info" data-video="cksYkEzUa7k">
-                    <h3>The Lego Movie</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
-                </div>
-            </div>
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-4.jpg" alt="">
-                <div class="trailer-item-info" data-video="Ze5YA4mkzhI">
-                    <h3>Secret Men Club</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
-                </div>
-            </div>
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-5.jpg" alt="">
-                <div class="trailer-item-info" data-video="lbUAVTc7NTo">
-                    <h3>VICE</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
-                </div>
-            </div>
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-6.jpg" alt="">
-                <div class="trailer-item-info" data-video="RyFlfN4dD14">
-                    <h3>The Vanishing</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
-                </div>
-            </div>
         </div>
     </div>
     <footer></footer>
