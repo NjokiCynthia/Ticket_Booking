@@ -2,7 +2,7 @@
     $id = $_GET['id'];
     include "config.php";
 
-    $sql = "DELETE FROM movietable WHERE eventID = $id"; 
+    $sql = "DELETE FROM eventtable WHERE eventID = $id"; 
 
     if ($con->query($sql) === TRUE) {
         header('Location: addevent.php');

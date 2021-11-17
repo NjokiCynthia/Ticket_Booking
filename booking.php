@@ -7,7 +7,7 @@ if ((!$_GET['id'])) {
     echo "<script>alert('You are Not Suppose to come Here Directly');window.location.href='index.php';</script>";
 }
 include "connection.php";
-$movieQuery = "SELECT * FROM movieTable WHERE eventID = $id";
+$movieQuery = "SELECT * FROM eventtable WHERE eventID = $id";
 $eventImg = mysqli_query($con, $movieQuery);
 $row = mysqli_fetch_array($eventImg);
 ?>

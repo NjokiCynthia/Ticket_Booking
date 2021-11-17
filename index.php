@@ -15,7 +15,7 @@
 <body>
     <?php
     include "connection.php";
-    $sql = "SELECT * FROM movieTable";
+    $sql = "SELECT * FROM eventtable";
     ?>
     <header></header>
     <div id="home-section-1" class="churchill-show-container">

@@ -28,7 +28,7 @@ if (!isset($_SESSION['uname'])) {
     $sql = "SELECT * FROM bookingtable";
     $bookingsNo = mysqli_num_rows(mysqli_query($con, $sql));
     $messagesNo = mysqli_num_rows(mysqli_query($con, "SELECT * FROM feedbacktable"));
-    $moviesNo = mysqli_num_rows(mysqli_query($con, "SELECT * FROM movietable"));
+    $moviesNo = mysqli_num_rows(mysqli_query($con, "SELECT * FROM eventtable"));
     $userNo = mysqli_num_rows(mysqli_query($con, "SELECT * FROM users"));
     ?>
 

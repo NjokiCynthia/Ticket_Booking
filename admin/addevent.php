@@ -33,7 +33,7 @@ if (isset($_POST['but_logout'])) {
     $sql = "SELECT * FROM bookingTable";
     $bookingsNo = mysqli_num_rows(mysqli_query($con, $sql));
     $messagesNo = mysqli_num_rows(mysqli_query($con, "SELECT * FROM feedbackTable"));
-    $moviesNo = mysqli_num_rows(mysqli_query($con, "SELECT * FROM movieTable"));
+    $moviesNo = mysqli_num_rows(mysqli_query($con, "SELECT * FROM eventtable"));
     ?>
     
     <?php include('header.php'); ?>
