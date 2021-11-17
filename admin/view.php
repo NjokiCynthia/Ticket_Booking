@@ -53,12 +53,12 @@ if (isset($_POST['but_logout'])) {
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <tr>
                             <th>Booking ID</th>
-                            <th>Movie ID</th>
+                            <th>Event ID</th>
                             <th>Name</th>
                             <th>Phone Number</th>
                             <th>Email</th>
                             <th>Date</th>
-                            <th>Theatre & Type</th>
+                            <th>Sitting Slot</th>
                             <th>Time</th>
                             <th>Order ID</th>
                             <th>Amount</th>
@@ -73,13 +73,13 @@ if (isset($_POST['but_logout'])) {
                             $run = mysqli_query($con, $select);
                             while ($row = mysqli_fetch_array($run)) {
                                 $bookingid = $row['bookingID'];
-                                $movieID = $row['movieID'];
+                                $eventID = $row['movieID'];
                                 $bookingFName = $row['bookingFName'];
                                 $bookingLName = $row['bookingLName'];
                                 $mobile = $row['bookingPNumber'];
                                 $email = $row['bookingEmail'];
                                 $date = $row['bookingDate'];
-                                $theatre = $row['bookingTheatre'];
+                                $sitting = $row['sitting_slot'];
                                 $type = $row['bookingType'];
                                 $time = $row['bookingTime'];
                                 $ORDERID = $row['ORDERID'];

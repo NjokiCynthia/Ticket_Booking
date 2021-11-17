@@ -52,12 +52,13 @@ if (isset($_POST['but_logout'])) {
                     </div>
                     <form action="" method="POST">
                         <input placeholder="Title" type="text" name="eventTitle" required>
+                        <input placeholder="Date" type="text" name="eventDate" required>
                        
                         <input placeholder="Director" type="text" name="eventDirector" required>
-                        <input placeholder="Comedians" type="text" name="showComedians" required>
+                        <input placeholder="comedians" type="text" name="comedians" required>
                         <label>Sitting Slot.</label>
                         <input placeholder="REGULAR" type="text" name="REGULAR" required><br />
-                        <input placeholder="Vip" type="text" name="vip" required><br />
+                        <input placeholder="VIP" type="text" name="VIP" required><br />
                         <br />
                         <br>
                         <label>Add Poster</label>
@@ -68,15 +69,16 @@ if (isset($_POST['but_logout'])) {
                             $insert_query = "INSERT INTO 
                             movieTable (  eventImg,
                                             eventTitle,
-                            
+                                            eventDate,
                                             eventDirector,
                                             comedians,
                                             REGULAR,
                                             VIP)
                             VALUES (        'img/" . $_POST['eventImg'] . "',
                                             '" . $_POST["eventTitle"] . "',
-                                            
+                                            '" . $_POST["eventDate"] . "',
                                             '" . $_POST["eventDirector"] . "',
+
                                             '" . $_POST["comedians"] . "',
                                             '" . $_POST["REGULAR"] . "',
                                             '" . $_POST["VIP"] . "',)";
@@ -89,52 +91,7 @@ if (isset($_POST['but_logout'])) {
                         ?>
                     </form>
                 </div>
-                <div class="admin-section-panel admin-section-panel2">
-                    <div class="admin-panel-section-header">
-                        <h2>Recent Movies</h2>
-                        <i class="fas fa-film" style="background-color: #4547cf"></i>
-                    </div>
-
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <tr>
-                            <th>MovieID</th>
-                            <th>MovieTitle</th>
-                            <th>Movie_Genre</th>
-                            <th>Release_date</th>
-                            <th>Director</th>
-                            <th>More</th>
-                            
-                        </tr>
-                        <tbody>
-                            <?php
-                            $host = "localhost"; /* Host name */
-                            $user = "root"; /* User */
-                            $password = ""; /* Password */
-                            $dbname = "cinema_db"; /* Database name */
-
-                            $con = mysqli_connect($host, $user, $password, $dbname);
-                            $select = "SELECT * FROM `movietable`";
-                            $run = mysqli_query($con, $select);
-                            while ($row = mysqli_fetch_array($run)) {
-                                $ID = $row['eventID'];
-                                $title = $row['eventTitle'];
-                                
-                                $movieactor = $row['eventDirector'];
-                            ?>
-                                <tr align="center">
-                                    <td><?php echo $ID; ?></td>
-                                    <td><?php echo $title; ?></td>
-                                   
-                                    <td><?php echo $comedian; ?></td>
-                                    <!--<td><?php echo  "<a href='deletemovie.php?id=" . $row['movieID'] . "'>delete</a>"; ?></td>-->
-                                    <td><button value="Book Now!" type="submit" onclick="" type="button" class="btn btn-danger"><?php echo  "<a href='deletemovie.php?id=" . $row['movieID'] . "'>delete</a>"; ?></button></td>
-                                </tr>
-                            <?php }
-                            ?>
-                        </tbody>
-
-                    </table>
-                </div>
+                
             </div>
 
         </div>

@@ -29,7 +29,7 @@ if (isset($_POST['but_logout'])) {
 
 <body>
     <?php
-    $link = mysqli_connect("localhost", "root", "", "cinema_db");
+    $link = mysqli_connect("localhost", "root", "", "churchill");
     $sql = "SELECT * FROM bookingTable";
     $bookingsNo = mysqli_num_rows(mysqli_query($link, $sql));
     $messagesNo = mysqli_num_rows(mysqli_query($link, "SELECT * FROM feedbackTable"));
@@ -54,28 +54,22 @@ if (isset($_POST['but_logout'])) {
                         <form action="spot.php" method="POST">
 
 
-                            <select name="theatre" required>
-                                <option value="" disabled selected>THEATRE</option>
-                                <option value="main-hall">Main Hall</option>
-                                <option value="vip-hall">VIP Hall</option>
-                                <option value="private-hall">Private Hall</option>
+                            <select name="sitting_slot" required>
+                                <option value="" disabled selected>SITTING SLOT</option>
+                                <option value="main-hall">REGULAR</option>
+                                <option value="vip-hall">VIP</option>
+                            
                             </select>
 
-                            <select name="type" required>
-                                <option value="" disabled selected>TYPE</option>
-                                <option value="3d">3D</option>
-                                <option value="2d">2D</option>
-                                <option value="imax">IMAX</option>
-                                <option value="7d">7D</option>
-                            </select>
+                           
 
                             <select name="date" required>
                                 <option value="" disabled selected>DATE</option>
-                                <option value="12-3">March 12,2019</option>
-                                <option value="13-3">March 13,2019</option>
-                                <option value="14-3">March 14,2019</option>
-                                <option value="15-3">March 15,2019</option>
-                                <option value="16-3">March 16,2019</option>
+                                <option value="12-3">January 12,2021</option>
+                                <option value="13-3">February 13,2021</option>
+                                <option value="14-3">March 14,2021</option>
+                                <option value="15-3">April 15,2021</option>
+                                <option value="16-3">May 16,2021</option>
                             </select>
 
                             <select name="hour" required>
@@ -94,7 +88,7 @@ if (isset($_POST['but_logout'])) {
 
                             <input placeholder="Phone Number" type="text" name="pNumber" required>
                             <input placeholder="email" type="email" name="email" required>
-                            <input placeholder="Movie ID" type="text" name="movie_id">
+                            <input placeholder="Event ID" type="text" name="eventID">
                             
                             <input placeholder="Amount" type="text" name="cash" required>
 

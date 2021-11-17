@@ -7,13 +7,14 @@ $fname = $_POST['fName'];
 $lname = $_POST['lName'];
 $email = $_POST['email'];
 $mobile = $_POST['pNumber'];
-$theatre = $_POST['theatre'];
+$sitting = $_POST['sitting_slot'];
 
 $date = $_POST['date'];
 $time = $_POST['hour'];
-$movieid = $_POST['movie_id'];
+$eventID = $_POST['eventID'];
 $order = "ARVR" . rand(10000, 99999999);
 $cust  = "CUST" . rand(1000, 999999);
+$ta;
 
 //sessions
 // $_SESSION['ORDERID'] = $order;
@@ -26,7 +27,7 @@ if ((!$_POST['submit'])) {
 
 if (isset($_POST['submit'])) {
 
-    $qry = "INSERT INTO bookingtable(`movieID`, `bookingTheatre`, `bookingType`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`, `bookingEmail`,`amount`, `ORDERID`)VALUES ('$movieid','$theatre','$date','$time','$fname','$lname','$mobile','$email','Not Paid','$order')";
+    $qry = "INSERT INTO bookingtable(`eventID`, `sitting_slot`, `bookingType`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`, `bookingEmail`,`amount`, `ORDERID`)VALUES ('$eventID','$sitting','$date','$time','$fname','$lname','$mobile','$email','Not Paid','$order')";
 
     $result = mysqli_query($con, $qry);
 }
@@ -83,9 +84,9 @@ if (isset($_POST['submit'])) {
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td><label>SITTING SLOT ::*</label></td>
+                        <td><label>Sitting slot ::*</label></td>
                         <td>
-                            <?php echo $_POST['theatre']; ?>
+                            <?php echo $_POST['sitting_slot']; ?>
                         </td>
                     </tr>
                    
@@ -94,10 +95,10 @@ if (isset($_POST['submit'])) {
                         <td><label>TXN_AMOUNT*</label></td>
                         <td>
                             <?php
-                            if ($theatre == "REGULAR") {
+                            if ($sitting == "REGULAR") {
                                 $ta = 500;
                             }
-                            if ($theatre == "VIP") {
+                            if ($sitting == "VIP") {
                                 $ta = 1000;
                             }
                         

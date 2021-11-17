@@ -149,13 +149,13 @@ $db = mysqli_select_db($con, "cinema_db");
 		}
 		while ($row = mysqli_fetch_assoc($result)) {
 			$bookingid = $row['bookingID'];
-			$movieID = $row['movieID'];
+			$event_ID = $row['event_ID'];
 			$bookingFName = $row['bookingFName'];
 			$bookingLName = $row['bookingLName'];
 			$mobile = $row['bookingPNumber'];
 			$email = $row['bookingEmail'];
 			$date = $row['bookingDate'];
-			$theatre = $row['bookingTheatre'];
+			$sitting = $row['sitting_slot'];
 			$type = $row['bookingType'];
 			$time = $row['bookingTime'];
 			$amount = $row['amount'];
@@ -174,12 +174,12 @@ $db = mysqli_select_db($con, "cinema_db");
 						<tr>
 							<td class="title">
 								<div class="footer-brand">
-									<h1 class="footer-heading">ARVR Cinema</h1>
+									<h1 class="footer-heading">CHURCHILL SHOW</h1>
 								</div>
 							</td>
 							<td>
 								Invoice #: <?php echo $ORDERID; ?><br>
-								Created: <?php date_default_timezone_set('Asia/Kolkata');
+								Created: <?php date_default_timezone_set('Nairobi/Kenya');
 											echo $date = DATE("d-m-y h:i:s", strtotime($date));  ?><br>
 								Due: <?php echo "After 24 Hours"; ?>
 								<!-- 1 Day = 24*60*60 = 86400 -->
@@ -193,9 +193,9 @@ $db = mysqli_select_db($con, "cinema_db");
 					<table>
 						<tr>
 							<td>
-								ARVR Cinema<br>
-								393 , Kohat Enclave<br>
-								Delhi-110088
+								Churchill Show<br>
+								393 , Nairobi<br>
+								Kenya
 							</td>
 
 							<td>
@@ -230,7 +230,7 @@ $db = mysqli_select_db($con, "cinema_db");
 
 			<tr class="heading">
 				<td>
-					Movie Details
+					Event Details
 				</td>
 
 				<td>
@@ -240,7 +240,7 @@ $db = mysqli_select_db($con, "cinema_db");
 
 			<tr class="item">
 				<td>
-					Movie Date
+					Event Date
 				</td>
 
 				<td>
@@ -250,21 +250,11 @@ $db = mysqli_select_db($con, "cinema_db");
 
 			<tr class="item">
 				<td>
-					Theatre Type
+				Sitting Slot
 				</td>
 
 				<td>
-					<?php echo $theatre; ?> </td>
-			</tr>
-
-			<tr class="item last">
-				<td>
-					Movie Type
-				</td>
-
-				<td>
-					<?php echo $type; ?>
-				</td>
+					<?php echo $sitting; ?> </td>
 			</tr>
 
 			<tr class="total">
@@ -279,13 +269,13 @@ $db = mysqli_select_db($con, "cinema_db");
 		<?php
 		include "phpqrcode/qrlib.php";
 		QRcode::png("Bookingid=$bookingid,
-		MovieID=$movieID,
+		event_ID=$event_ID,
 		First Name=$bookingFName,
 		Last Name=$bookingLName,
 		Number=$mobile,
 		Email=$email,
 		date=$date,
-		Theatre=$theatre,
+		sitting_slot=$sitting,
 		TYPE=$type,
 		Time=$time,
 		amount=$amount,

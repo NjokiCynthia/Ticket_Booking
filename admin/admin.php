@@ -71,13 +71,13 @@ if (!isset($_SESSION['uname'])) {
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <tr>
                                 <th>Booking ID</th>
-                                <th>Movie ID</th>
+                                <th>Event ID</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Phone Number</th>
                                 <th>Email</th>
                                 <th>Date</th>
-                                <th>Theatre</th>
+                                <th>Sitting Slot</th>
                                 <th>Type</th>
                                 <th>Order ID</th>
                             </tr>
@@ -88,13 +88,13 @@ if (!isset($_SESSION['uname'])) {
                                 $run = mysqli_query($con, $select);
                                 while ($row = mysqli_fetch_array($run)) {
                                     $bookingid = $row['bookingID'];
-                                    $movieID = $row['movieID'];
+                                    $eventID = $row['event_ID'];
                                     $bookingFName = $row['bookingFName'];
                                     $bookingLName = $row['bookingLName'];
                                     $mobile = $row['bookingPNumber'];
                                     $email = $row['bookingEmail'];
                                     $date = $row['bookingDate'];
-                                    $theatre = $row['bookingTheatre'];
+                                    $sitting = $row['sitting_slot'];
                                     $type = $row['bookingType'];
                                     $ORDERID = $row['ORDERID'];
 
@@ -103,13 +103,13 @@ if (!isset($_SESSION['uname'])) {
                                 ?>
                                     <tr align="center">
                                         <td><?php echo $bookingid; ?></td>
-                                        <td><?php echo $movieID; ?></td>
+                                        <td><?php echo $eventID; ?></td>
                                         <td><?php echo $bookingFName; ?></td>
                                         <td><?php echo $bookingLName; ?></td>
                                         <td><?php echo $mobile; ?></td>
                                         <td><?php echo $email; ?></td>
                                         <td><?php echo $date; ?></td>
-                                        <td><?php echo $theatre; ?></td>
+                                        <td><?php echo $sitting; ?></td>
                                         <td><?php echo $type; ?></td>
                                         <td><?php echo $ORDERID; ?></td>
                                     </tr>
