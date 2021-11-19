@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $mobile = $_POST['pNumber'];
     $sitting = $_POST['sitting_slot'];
-    $type = $_POST['type'];
+    //$type = $_POST['type'];
     $date = $_POST['date'];
     $time = $_POST['hour'];
     $eventID = $_POST['eventID'];
@@ -16,8 +16,8 @@ if (isset($_POST['submit'])) {
 
 
 
-    $qry = "INSERT INTO `bookingtable`('eventID`, `sitting_slot`, `bookingType`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`, `bookingEmail`,`amount`, `ORDERID`) VALUES  
-			('$eventID', '$sitting', '$type', '$date', '$time', '$fname', '$lname', '$mobile','$email', '$amount' ,'$order')";
+    $qry = "INSERT INTO `bookingtable`('eventID`, `sitting_slot`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`, `bookingEmail`,`amount`, `ORDERID`) VALUES  
+			('$eventID', '$sitting', '$date', '$time', '$fname', '$lname', '$mobile','$email', '$amount' ,'$order')";
 
     $rs = mysqli_query($con, $qry);
 

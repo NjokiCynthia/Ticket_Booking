@@ -18,13 +18,6 @@ $id = $_GET['id']; // get id through query string
 $setting = "select * from bookingtable where bookingID='$id'";
 $qry = mysqli_query($con, $setting); // select query
 
-// while($row = mysqli_fetch_array($qry)){
-//     $First_Name = $row['bookingFName'];
-//     $Last_Name = $row['bookingLName'];
-//     $phone_mobile = $row['bookingPNumber'];
-//     $email1 = $row['bookingEmail'];
-// }
-
 $data = mysqli_fetch_array($qry); // fetch data
 
 if (isset($_POST['update'])) // when click on Update button

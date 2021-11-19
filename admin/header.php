@@ -18,6 +18,6 @@ if (isset($_POST['but_logout'])) {
         <form method='post' action="">
             <input type="submit" value="Logout" class="btn btn-outline-warning" name="but_logout">
         </form>
-        <img class="admin-user-avatar" src="../Churchill_Show_logo.jpeg" alt="">
+        <img class="admin-user-avatar" src="../img/avatar.png" alt="">
     </div>
 </div>

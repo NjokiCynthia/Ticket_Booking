@@ -7,8 +7,8 @@ if ((!$_GET['id'])) {
     echo "<script>alert('You are Not Suppose to come Here Directly');window.location.href='index.php';</script>";
 }
 include "connection.php";
-$movieQuery = "SELECT * FROM eventtable WHERE eventID = $id";
-$eventImg = mysqli_query($con, $movieQuery);
+$eventQuery = "SELECT * FROM eventtable WHERE eventID = $id";
+$eventImg = mysqli_query($con, $eventQuery);
 $row = mysqli_fetch_array($eventImg);
 ?>
 
@@ -18,8 +18,8 @@ $row = mysqli_fetch_array($eventImg);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <title>Book <?php echo $row['movieTitle']; ?> Now</title>
-    <link rel="icon" type="image/png" href="img/logo.png">
+    <title>Book <?php echo $row['eventTitle']; ?> Now</title>
+    <link rel="icon" type="image/jpeg" href="footer.jpeg">
     <script src="_.js "></script>
 </head>
 
@@ -32,7 +32,7 @@ $row = mysqli_fetch_array($eventImg);
             <i class="fas fa-2x fa-times"></i>
         </div>
         <div class="booking-panel-section booking-panel-section3">
-            <div class="movie-box">
+            <div class="events">
                 <?php
                 echo '<img src="' . $row['eventImg'] . '" alt="">';
                 ?>
@@ -47,10 +47,10 @@ $row = mysqli_fetch_array($eventImg);
                 <form action="verify.php" method="POST">
 
 
-                    <select name="theatre" required>
-                        <option value="" disabled selected>SITTING SLOT</option>
-                        <option value="vip-hall">VIP</option>
-                        <option value="private-hall">REGULAR</option>
+                    <select name="sitting_slot" required>
+                        <option value="" disabled selected>sitting_slot</option>
+                        <option value="VIP">VIP</option>
+                        <option value="REGULAR">REGULAR</option>
                     </select>
 
                     <select name="date" required>

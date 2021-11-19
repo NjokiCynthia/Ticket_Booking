@@ -7,11 +7,11 @@ $fname = $_POST['fName'];
 $lname = $_POST['lName'];
 $email = $_POST['email'];
 $mobile = $_POST['pNumber'];
-$sitting = $_POST['sitting_slot'];
+$sitting_slot = $_POST['sitting_slot'];
 
 $date = $_POST['date'];
 $time = $_POST['hour'];
-$eventID = $_POST['eventID'];
+//$eventTitle = $_POST['eventTitle'];
 $order = "ARVR" . rand(10000, 99999999);
 $cust  = "CUST" . rand(1000, 999999);
 $ta;
@@ -27,7 +27,7 @@ if ((!$_POST['submit'])) {
 
 if (isset($_POST['submit'])) {
 
-    $qry = "INSERT INTO bookingtable(`eventID`, `sitting_slot`, `bookingType`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`, `bookingEmail`,`amount`, `ORDERID`)VALUES ('$eventID','$sitting','$date','$time','$fname','$lname','$mobile','$email','Not Paid','$order')";
+    $qry = "INSERT INTO bookingtable(`sitting_slot`, `bookingType`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`, `bookingEmail`,`amount`, `ORDERID`)VALUES ('$sitting_slot','$date','$time','$fname','$lname','$mobile','$email','Not Paid','$order')";
 
     $result = mysqli_query($con, $qry);
 }
@@ -95,10 +95,10 @@ if (isset($_POST['submit'])) {
                         <td><label>TXN_AMOUNT*</label></td>
                         <td>
                             <?php
-                            if ($sitting == "REGULAR") {
+                            if ($sitting_slot == "REGULAR") {
                                 $ta = 500;
                             }
-                            if ($sitting == "VIP") {
+                            if ($sitting_slot == "VIP") {
                                 $ta = 1000;
                             }
                         
@@ -106,7 +106,7 @@ if (isset($_POST['submit'])) {
 
                             <input type="text" name="TXN_AMOUNT" value="<?php echo $ta; ?>" readonly>
                             <input type="hidden" name="CUST_ID" value="<?php echo $cust; ?>">
-                            <input type="hidden" name="INDUSTRY_TYPE_ID" value="retail">
+                           
                             <input type="hidden" name="CHANNEL_ID" value="WEB">
 
                         </td>
@@ -117,8 +117,8 @@ if (isset($_POST['submit'])) {
                         <td></td>
                         <td></td>
                         <td>
-                            <button value="Book Now!" type="submit" onclick="" type="button" class="btn btn-danger">Pay Now!</button>
-                            <!-- <input value="CheckOut" type="submit"	onclick=""></td> -->
+                            <button value="Book Now!" type="submit" onclick="" type="button" class="btn btn-danger">submit</button>
+                            
                     </tr>
                 </tbody>
             </table>

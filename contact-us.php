@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Contact Us</title>
-    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="icon" type="image/jpg" href="header.jpg">
     <script src="_.js "></script>
 </head>
 
@@ -59,11 +59,8 @@
             <p><a href="mailto:cinemareservation@bue.edu.eg">cinemareservation@bue.edu.eg</a></p>
         </div>
     </div>
-    <div style="width: 75%; height: 350px; margin: 15%;">
-        <div class="gmap_canvas"><iframe id="gmap_canvas" src="https://maps.google.com/maps?q=BUE&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-        </div>
     </div>
-    <footer></footer>
+    
     <script src="scripts/jquery-3.3.1.min.js "></script>
     <script src="scripts/owl.carousel.min.js "></script>
     <script src="scripts/script.js "></script>

@@ -15,7 +15,7 @@ if (!isset($_SESSION['uname'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Dashboard</title>
-    <link rel="icon" type="image/png" href="../img/logo.png">
+    <link rel="img" type="image/jpg" href="header.jpg">
     <link rel="stylesheet" href="../style/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -88,14 +88,14 @@ if (!isset($_SESSION['uname'])) {
                                 $run = mysqli_query($con, $select);
                                 while ($row = mysqli_fetch_array($run)) {
                                     $bookingid = $row['bookingID'];
-                                    $eventID = $row['event_ID'];
+                                    $eventID = $row['eventID'];
                                     $bookingFName = $row['bookingFName'];
                                     $bookingLName = $row['bookingLName'];
                                     $mobile = $row['bookingPNumber'];
                                     $email = $row['bookingEmail'];
                                     $date = $row['bookingDate'];
                                     $sitting = $row['sitting_slot'];
-                                    $type = $row['bookingType'];
+                                    //$type = $row['bookingType'];
                                     $ORDERID = $row['ORDERID'];
 
 
@@ -110,7 +110,7 @@ if (!isset($_SESSION['uname'])) {
                                         <td><?php echo $email; ?></td>
                                         <td><?php echo $date; ?></td>
                                         <td><?php echo $sitting; ?></td>
-                                        <td><?php echo $type; ?></td>
+                                       
                                         <td><?php echo $ORDERID; ?></td>
                                     </tr>
 
